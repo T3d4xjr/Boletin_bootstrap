@@ -1,21 +1,41 @@
-export default function Modal() {
+"use client"
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+export default function ModalExample() {
   return (
-    <div>
-      <div className="modal" tabIndex="-1">
-        <div className="modal-dialog">
+    <>
+      <button
+        type="button"
+        className="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+      >
+        Abrir Modal
+      </button>
+
+      <div
+        className="modal fade"
+        id="exampleModal"
+        tabIndex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog" role="document">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title">Modal title</h5>
+              <h5 className="modal-title" id="exampleModalLabel">
+                Esto es un modal
+              </h5>
               <button
                 type="button"
-                className="btn-close"
+                className="close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
-              ></button>
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
-            <div className="modal-body">
-              <p>Modal body text goes here.</p>
-            </div>
+            <div className="modal-body">Esto es el cuerpo del modal</div>
             <div className="modal-footer">
               <button
                 type="button"
@@ -31,6 +51,6 @@ export default function Modal() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
